@@ -1,4 +1,4 @@
-import { setIsStarted, setUserInput } from '@/entities';
+import { setCursorPosition, setIsStarted, setUserInput } from '@/entities';
 import { useAppDispatch, useAppSelector } from '@/shared';
 
 export const InputForMobileDevices = () => {
@@ -12,6 +12,7 @@ export const InputForMobileDevices = () => {
       onChange={(e) => {
         dispatch(setIsStarted(true));
         dispatch(setUserInput(e.target.value));
+        dispatch(setCursorPosition(e.target.value.length));
       }}
       className="w-full h-full z-10 opacity-0 lowercase"
     />
