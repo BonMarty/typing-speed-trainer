@@ -26,6 +26,10 @@ export const wordsSlice = createSlice({
       state.userInput = state.userInput.slice(0, -1);
     },
 
+    setUserInput(state: WordsState, action: PayloadAction<string>) {
+      state.userInput = action.payload;
+    },
+
     incrementCursorPosition(state: WordsState) {
       state.cursorPositon += 1;
     },
@@ -46,4 +50,4 @@ export const wordsSlice = createSlice({
   },
 });
 
-export const { generateRandomWords, concatUserInput, sliceUserInput, incrementCursorPosition, decrementCursorPosition, setTop, resetWordsStateToInitial } = wordsSlice.actions;
+export const { generateRandomWords, concatUserInput, sliceUserInput, setUserInput, incrementCursorPosition, decrementCursorPosition, setTop, resetWordsStateToInitial } = wordsSlice.actions;
